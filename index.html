@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="banner">
+        <header>
+            <a href="#" class="logo">Portfolio</a>
+            <div class="toggle"></div>
+        </header>
+        <img src="profile.png" alt="My Image" class="man" height="650"> <!-- My Image -->
+        <div class="content">
+            <div class="contentBx">
+                <h4>Hello,</h4>
+                <h2>I'm Sandesh</h2>
+                <h3>Software Developer</h3>
+                <p>About Myself And My Carrer Objective  
+                    1111111111111111111111111111111111111111111111111111111
+                    11111111111111111111111111111111111111
+                    111111111111111111111111111111111111111111111111111111111111111111</p>
+                <a href="#">Contact Me</a>
+                <a href="#">Download CV</a>
+            </div>
+        </div>
+
+        <ul class="sci">
+            <li><a href="#"><img src="FaceBook.png" alt="FaceBook" width="50px"></a></li>    <!-- Any logo -->
+            <li><a href="#"><img src="Twitter.png" alt="Twitter" width="50px"></a></li>    <!-- Any logo -->
+            <li><a href="#"><img src="Instagram.png" alt="Instagram" width="50px"></a></li>    <!-- Any logo -->
+        </ul>
+
+        <ul class="menu">
+            <li> <a href="#" > Home </a> </li>
+            <li> <a href="#" > About </a> </li>
+            <li> <a href="#" > Projects </a> </li>
+            <li> <a href="#" > Internships </a> </li>
+            <li> <a href="#" > Resume </a> </li>
+            <li> <a href="#" > Contact </a> </li>
+        </ul>
+
+        <img src="1.png" alt="Shape Images" class="elements" data-speed="8"   >     <!-- Any shape -->
+        <img src="2.png" alt="Shape Images" class="elements" data-speed="6"   >     <!-- Any shape -->
+        <img src="3.png" alt="Shape Images" class="elements" data-speed="-10" >     <!-- Any neo shape -->
+        <img src="4.png" alt="Shape Images" class="elements" data-speed="-6"  >     <!-- Any shape -->
+        <img src="5.png" alt="Shape Images" class="elements" data-speed="10"  >     <!-- Any shape -->
+
+    </section>
+
+    <script>
+        const toggle = document.querySelector('.toggle');
+        const banner = document.querySelector('.banner');
+        toggle.onclick = function(){
+            toggle.classList.toggle('active');
+            banner.classList.toggle('active');
+        }
+
+        function parallax(e){
+            this.querySelectorAll('.elements').forEach(Layer => {
+                const speed = Layer.getAttribute('data-speed');
+                const x = (window.innerWidth - e.pageX*speed)/100;
+                Layer.style.transform = `translateX(${x}px)`;
+            })
+        }
+
+        document.addEventListener("mousemove", parallax);
+    </script>
+</body>
+</html>
