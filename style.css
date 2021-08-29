@@ -261,7 +261,7 @@ header .toggle.active
     opacity: 0;
 }
 
-/* ResponsiveNess Of Website Veriables */
+/* Veriables for ResponsiveNess Of Website*/
 @media (max-width: 991px)
 {
     .elements
