@@ -296,12 +296,81 @@ header .toggle.active
     }
     .menu
     {
+        /* position: relative; */
+        display: flex;
+        flex-direction: column;
         align-items: center;
         padding: 0;
     }
+    .menu li
+    {
+        list-style: none;
+    }
+    .menu li:before
+    {
+        content: attr(data-text);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color:#fff;
+        font-size: 6em;
+        font-weight: 700;
+        pointer-events: none;
+        opacity: 0;
+        letter-spacing: 20px;
+        transition: 0.5s;
+        white-space: nowrap;
+    }
+    .menu li:hover:before
+{
+    opacity: 0.4;
+    letter-spacing: 0px;
+}
     .menu li a
     {
+        position: relative;
+        display: inline-block;
+        padding: 6px 15px;
         color: #fff;
+        text-decoration: none;
+        background: #ff3f81;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 1;
+    }
+    .menu:hover li a
+    {
+        opacity: 0;
+    }
+    .menu li a:hover
+    {
+        transform: scale(1.4);
+        z-index: 1000;
+        background: #1ede6d;
+        opacity: 1;
+    }
+    
+    .menu li a:before
+    {
+        content:  '';
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 80px;
+        height: 100%;
+        background: linear-gradient(90deg,transparent, rgba(255,255,255,0.8), transparent);
+        transform: skewX(50deg);
+        transition: 0s;
+    }
+    .menu li a:hover:before
+    {
+        left: calc(100% + 100px);
+        transition: 0.5s;
+        transition-delay: 0.2s;
     }
     .content .contentBx h2 
     {
@@ -322,5 +391,9 @@ header .toggle.active
     .banner.active .man
     {
         transition: 0s;
+    }
+    .content .contentBx p
+    {
+        padding-right: 50%;
     }
 }
